@@ -55,7 +55,7 @@ Scaffold the documentation structure for this project. Work with the user to fle
 
    Read only the templates you need. Adapt them to the project — don't use verbatim. Work with the user to fill in real content rather than leaving placeholders.
 
-4. **Add maintenance instructions to CLAUDE.md.** Use `references/claude-md.md` as the base. Adapt to what files were actually created (e.g., omit the IDEAS.md instruction if that file wasn't created).
+4. **Add maintenance instructions to CLAUDE.md.** Create CLAUDE.md if it doesn't exist. Use `references/claude-md.md` as the base. Adapt to what files were actually created (e.g., omit the IDEAS.md instruction if that file wasn't created).
 
 5. **Create initial log entry** in `logs/` for today, noting the documentation setup.
 
@@ -68,7 +68,7 @@ Review recent work and bring documentation up to date.
 ### Steps
 
 1. **Scan recent activity.** Check:
-   - `git log` for recent commits since the last log entry (if no prior log exists, scan the last ~20 commits for context)
+   - `git log` for recent commits since the last log entry. Find the newest file in `logs/` to determine the cutoff date. If no prior log exists, scan the last ~20 commits for context.
    - Current state of ROADMAP.md — are items stale? Anything done but not checked off?
    - Existing design-docs — any need status updates?
    - If `logs/` doesn't exist yet, create it and start the first entry.
