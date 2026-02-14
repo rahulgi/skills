@@ -27,7 +27,11 @@ Scaffold the documentation structure for this project. Work with the user to fle
 
 ### Steps
 
-1. **Assess what exists.** Check for existing README.md, CLAUDE.md, ARCHITECTURE.md, etc. Don't overwrite existing content — integrate with it.
+1. **Assess what exists.** Check for existing README.md, CLAUDE.md, ARCHITECTURE.md, etc. Don't overwrite existing content — integrate with it using these rules:
+   - **README.md**: Preserve existing content. Reorganize into template sections if the structure is loose, but keep the substance.
+   - **CLAUDE.md**: Never modify existing instructions. If there's no existing documentation section, append one using the template. If there's already a documentation section (or similar conventions like "work log" or "commit" instructions), show the user both the existing rules and the template rules, and ask which to keep or how to merge them. Existing project conventions take precedence over template defaults.
+   - **ARCHITECTURE.md**: If one exists, adopt its structure and fill gaps from the template. If not, create from template.
+   - **Other files** (ROADMAP, IDEAS, MARKETING): Create fresh from templates — these are unlikely to exist already.
 
 2. **Discuss scope with the user.** Not every project needs every file. At minimum, most projects benefit from:
    - README.md (what is this project?)
@@ -64,9 +68,10 @@ Review recent work and bring documentation up to date.
 ### Steps
 
 1. **Scan recent activity.** Check:
-   - `git log` for recent commits since the last log entry
+   - `git log` for recent commits since the last log entry (if no prior log exists, scan the last ~20 commits for context)
    - Current state of ROADMAP.md — are items stale? Anything done but not checked off?
    - Existing design-docs — any need status updates?
+   - If `logs/` doesn't exist yet, create it and start the first entry.
 
 2. **Update ROADMAP.md.** Check off completed items with dates and commit hashes. Add any new work that's emerged. Move items between sections as needed.
 

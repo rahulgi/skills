@@ -1,5 +1,7 @@
 # Roadmap
 
+<!-- Tags: #product #marketing — create new tags if needed, but keep the set small -->
+
 ## Status
 
 <!-- Brief snapshot: what's deployed, what's in flight, what's blocked -->
