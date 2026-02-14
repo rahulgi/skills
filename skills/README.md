@@ -14,4 +14,5 @@ claude skills add rahulgi/skills/<skill-name>
 
 | Skill | Description |
 |-------|-------------|
+| [council](council/) | Consult an advisory council of three AI personas (Cato, Ada, Marcus) backed by different frontier models |
 | [docs](docs/) | Agent-first project documentation — scaffolds and maintains ROADMAP, design-docs, logs, and more |
