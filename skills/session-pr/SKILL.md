@@ -25,7 +25,7 @@ Create a PR from the current session's changes.
 
 7. Push the branch with `-u` flag
 
-8. If the PR touches frontend code (e.g., files in `app/`, components, routes, styles), capture a screenshot of the relevant UI change and include it in the PR body using the `github-image-upload` skill.
+8. If the PR touches frontend code (e.g., files in `app/`, components, routes, styles), capture a screenshot of the relevant UI change and include it in the PR body using the `github-image-hosting` skill.
 
 9. Create PR using:
 ```bash
