@@ -17,3 +17,4 @@ claude skills add rahulgi/skills/<skill-name>
 | [council](council/) | Consult an advisory council of three AI personas (Cato, Ada, Marcus) backed by different frontier models |
 | [docs](docs/) | Agent-first project documentation — scaffolds and maintains ROADMAP, design-docs, logs, and more |
 | [session-pr](session-pr/) | Commit session changes to a new branch, push, and open a PR |
+| [worktree-bootstrap](worktree-bootstrap/) | Bootstrap a git worktree so typecheck and dev commands run correctly with shared dependencies by default |

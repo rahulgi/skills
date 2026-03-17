@@ -1,0 +1,4 @@
+version: 1
+display_name: Worktree Bootstrap
+short_description: Set up a git worktree so repo commands run cleanly.
+default_prompt: Bootstrap this worktree so typecheck or dev commands run correctly.
