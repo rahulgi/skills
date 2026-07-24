@@ -11,7 +11,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 PERSONAS = {
     "cato": {
         "name": "Cato",
-        "default_provider": "gemini",
+        "default_provider": "antigravity",
         "prompt": textwrap.dedent("""\
             You are Cato — named after Cato the Elder, the Roman senator who ended every speech with "Carthage must be destroyed."
 
@@ -68,8 +68,8 @@ PROVIDER_COMMANDS = {
         ["codex", "exec", "--full-auto", "-s", "read-only", prompt],
         capture_output=True, text=True, cwd=cwd, timeout=timeout,
     ),
-    "gemini": lambda prompt, cwd, timeout: subprocess.run(
-        ["gemini", prompt],
+    "antigravity": lambda prompt, cwd, timeout: subprocess.run(
+        ["agy", "--mode", "plan", "--sandbox", "--print", prompt],
         capture_output=True, text=True, cwd=cwd, timeout=timeout,
     ),
 }
@@ -99,8 +99,9 @@ def run_persona(persona_key, question, provider_override=None, cwd=None, timeout
         return persona["name"], output
     except subprocess.TimeoutExpired:
         return persona["name"], f"[Timed out after {timeout}s]"
-    except FileNotFoundError:
-        return persona["name"], f"[CLI '{provider}' not found — install it or override with --{persona_key}-provider]"
+    except FileNotFoundError as error:
+        cli = error.filename or provider
+        return persona["name"], f"[CLI '{cli}' not found — install it or override with --{persona_key}-provider]"
 
 
 def main():
@@ -114,9 +115,9 @@ def main():
         help="Which persona to consult, or 'all' for the full counsel",
     )
     parser.add_argument("question", help="The question or topic to get counsel on")
-    parser.add_argument("--cato-provider", default=None, choices=["claude", "codex", "gemini"])
-    parser.add_argument("--ada-provider", default=None, choices=["claude", "codex", "gemini"])
-    parser.add_argument("--marcus-provider", default=None, choices=["claude", "codex", "gemini"])
+    parser.add_argument("--cato-provider", default=None, choices=["antigravity", "claude", "codex"])
+    parser.add_argument("--ada-provider", default=None, choices=["antigravity", "claude", "codex"])
+    parser.add_argument("--marcus-provider", default=None, choices=["antigravity", "claude", "codex"])
     parser.add_argument("--cwd", default=os.getcwd(), help="Working directory (default: current)")
     parser.add_argument("--timeout", type=int, default=300, help="Timeout per persona in seconds (default: 300)")
 

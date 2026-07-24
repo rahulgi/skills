@@ -2,7 +2,7 @@
 name: council
 description: >
   Consult an advisory council of three AI personas — Cato (skeptic), Ada (optimist), Marcus (pragmatist) —
-  backed by different frontier LLM agents (Gemini, Claude, Codex). Each persona runs as a separate agent
+  backed by different frontier LLM agents (Antigravity, Claude, Codex). Each persona runs as a separate agent
   process with full repo context and returns independent feedback. Use when the user says "/council",
   asks for a second opinion, wants feedback on code changes, needs a premortem, wants to pressure-test
   a decision, or asks "what do you think about this approach?" Claude may also proactively suggest
@@ -18,7 +18,7 @@ Consult your advisory council: three AI personas backed by different frontier mo
 
 | Name | Archetype | Core question | Default provider |
 |------|-----------|---------------|-----------------|
-| **Cato** | Skeptical Strategist | "What could go wrong?" | `gemini` |
+| **Cato** | Skeptical Strategist | "What could go wrong?" | `antigravity` |
 | **Ada** | Expansive Optimist | "What could this become?" | `claude` |
 | **Marcus** | Pragmatic Builder | "What do we do next?" | `codex` |
 
@@ -69,8 +69,8 @@ Always ask the user before invoking — say something like: "This feels like a g
 
 Each persona defaults to a different LLM provider for genuine model diversity. Override with flags if a provider is unavailable:
 
-- `--cato-provider claude|codex|gemini`
-- `--ada-provider claude|codex|gemini`
-- `--marcus-provider claude|codex|gemini`
+- `--cato-provider antigravity|claude|codex`
+- `--ada-provider antigravity|claude|codex`
+- `--marcus-provider antigravity|claude|codex`
 
 The script has a 5-minute timeout per persona. All agents run in read-only mode in the current directory.

@@ -4,7 +4,7 @@
 
 **Named after:** Cato the Elder, the Roman senator who ended every speech with "Carthage must be destroyed."
 
-**Default provider:** Gemini
+**Default provider:** Antigravity
 
 **Core question:** "What could go wrong?"
 
